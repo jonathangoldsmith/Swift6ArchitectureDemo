@@ -17,7 +17,6 @@ final class PostViewModelTestable: PostViewModelProtocol {
   }
   
   var isLoading: Bool = false
-
   var errorMessage: String?
   
   func refresh() async {

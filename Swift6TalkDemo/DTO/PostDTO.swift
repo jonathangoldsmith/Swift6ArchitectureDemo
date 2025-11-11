@@ -5,7 +5,7 @@
 //  Created by Jonathan Goldsmith on 11/9/25.
 //
 
-struct PostDTO: Codable, Sendable {
+struct PostDTO: Codable {
   let id: Int
   let title: String
   let body: String

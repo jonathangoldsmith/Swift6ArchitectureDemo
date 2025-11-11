@@ -7,10 +7,7 @@
 
 import SwiftData
 
-@MainActor
 struct PersistenceController {
-  static let shared = PersistenceController()
-
   let container: ModelContainer
 
   init(inMemory: Bool = false) {

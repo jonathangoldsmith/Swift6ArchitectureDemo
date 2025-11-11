@@ -10,7 +10,7 @@ import SwiftData
 
 @main
 struct Swift6TalkDemoApp: App {
-  private let sharedPersistenceContainer: ModelContainer = PersistenceController.shared.container
+  private let sharedPersistenceContainer: ModelContainer = PersistenceController().container
   private let testingPersistenceContainer: ModelContainer = PersistenceController(inMemory: true).container
 
   var body: some Scene {
