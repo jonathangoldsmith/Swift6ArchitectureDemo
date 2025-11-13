@@ -7,16 +7,20 @@
 
 import Foundation
 import SwiftData
+import Combine
 
+@Observable
 final class PostViewModel: PostViewModelProtocol {
-  private let postActor: PostActor
+  private let postActor: PostLocalAlternativeActor
   private let networkingManager: NetworkingManagerProtocol
+  let localPersistence: PersistenceLocalAlternativeController
 
   var isLoading = false
   var errorMessage: String?
 
   init(networKingManager: NetworkingManagerProtocol = NetworkingManager(), container: ModelContainer) {
-    self.postActor = PostActor(modelContainer: container)
+    self.localPersistence = PersistenceLocalAlternativeController()
+    self.postActor = PostLocalAlternativeActor(localPersistence: self.localPersistence)
     self.networkingManager = networKingManager
   }
 

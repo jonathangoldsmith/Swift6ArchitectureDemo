@@ -21,7 +21,7 @@ struct PostsCoordinator: View {
     NavigationStack {
       PostsListView(viewModel: postsViewModel)
         .navigationTitle("Posts")
-        .navigationDestination(for: Post.self) { post in
+        .navigationDestination(for: PostDTO.self) { post in
           PostDetailView(post: post)
             .navigationTitle("Cool Post!")
         }

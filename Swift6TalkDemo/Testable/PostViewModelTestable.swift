@@ -8,12 +8,15 @@
 import SwiftData
 
 final class PostViewModelTestable: PostViewModelProtocol {
+  var localPersistence: PersistenceLocalAlternativeController
+  
   private let postActor: PostActorProtocol
   private let networkingManager: NetworkingManagerProtocol
 
   init(networKingManager: any NetworkingManagerProtocol = NetworkingManagerTestable(), container: ModelContainer) {
     self.networkingManager = networKingManager
     self.postActor = PostActor(modelContainer: container)
+    self.localPersistence = PersistenceLocalAlternativeController()
   }
   
   var isLoading: Bool = false

@@ -9,11 +9,10 @@ import SwiftUI
 import SwiftData
 
 struct PostsListView: View {
-  @Query(sort: \Post.id) private var posts: [Post]
   let viewModel: PostViewModelProtocol
 
   var body: some View {
-    List(posts) { post in
+    List(viewModel.localPersistence.posts) { post in
       NavigationLink(value: post) {
         VStack(alignment: .leading, spacing: 4) {
           Text(post.title)

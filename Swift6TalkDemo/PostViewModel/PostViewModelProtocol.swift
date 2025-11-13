@@ -11,6 +11,7 @@ protocol PostViewModelProtocol {
   init(networKingManager: NetworkingManagerProtocol, container: ModelContainer)
   var isLoading: Bool { get set }
   var errorMessage: String? { get set }
+  var localPersistence: PersistenceLocalAlternativeController { get }
   func refresh() async
   func clearAll() async
 }
